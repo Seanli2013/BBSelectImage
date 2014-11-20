@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		42F8043377970744C7C83A36 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 01C08C5DD36F569AC71264AB /* libPods.a */; };
+		C906A6EA1A1D87FB00140C78 /* BBRoundView.m in Sources */ = {isa = PBXBuildFile; fileRef = C906A6E91A1D87FB00140C78 /* BBRoundView.m */; };
+		C906A6EC1A1D886000140C78 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C906A6EB1A1D886000140C78 /* Foundation.framework */; };
+		C906A6EE1A1D888500140C78 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C906A6ED1A1D888500140C78 /* UIKit.framework */; };
 		C987F8511A13E15C00AD3571 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C987F8501A13E15C00AD3571 /* main.m */; };
 		C987F8541A13E15C00AD3571 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C987F8531A13E15C00AD3571 /* AppDelegate.m */; };
 		C987F8571A13E15C00AD3571 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C987F8561A13E15C00AD3571 /* ViewController.m */; };
@@ -31,6 +34,11 @@
 		01C08C5DD36F569AC71264AB /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		0459B054E22C384A2FCC9982 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		63FD1DB54F1C5119ECC10C2A /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		C906A6E81A1D87FB00140C78 /* BBRoundView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBRoundView.h; sourceTree = "<group>"; };
+		C906A6E91A1D87FB00140C78 /* BBRoundView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBRoundView.m; sourceTree = "<group>"; };
+		C906A6EB1A1D886000140C78 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		C906A6ED1A1D888500140C78 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		C906A6F01A1D8B0000140C78 /* BBSelectImages-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "BBSelectImages-Prefix.pch"; sourceTree = "<group>"; };
 		C987F84B1A13E15C00AD3571 /* BBSelectImages.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BBSelectImages.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C987F84F1A13E15C00AD3571 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C987F8501A13E15C00AD3571 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -51,6 +59,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C906A6EE1A1D888500140C78 /* UIKit.framework in Frameworks */,
+				C906A6EC1A1D886000140C78 /* Foundation.framework in Frameworks */,
 				42F8043377970744C7C83A36 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -68,6 +78,8 @@
 		3081F7A68093BCFB23C212EF /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				C906A6ED1A1D888500140C78 /* UIKit.framework */,
+				C906A6EB1A1D886000140C78 /* Foundation.framework */,
 				01C08C5DD36F569AC71264AB /* libPods.a */,
 			);
 			name = Frameworks;
@@ -96,6 +108,8 @@
 		C987F84D1A13E15C00AD3571 /* BBSelectImages */ = {
 			isa = PBXGroup;
 			children = (
+				C906A6E81A1D87FB00140C78 /* BBRoundView.h */,
+				C906A6E91A1D87FB00140C78 /* BBRoundView.m */,
 				C987F8521A13E15C00AD3571 /* AppDelegate.h */,
 				C987F8531A13E15C00AD3571 /* AppDelegate.m */,
 				C987F8551A13E15C00AD3571 /* ViewController.h */,
@@ -112,6 +126,7 @@
 			isa = PBXGroup;
 			children = (
 				C987F84F1A13E15C00AD3571 /* Info.plist */,
+				C906A6F01A1D8B0000140C78 /* BBSelectImages-Prefix.pch */,
 				C987F8501A13E15C00AD3571 /* main.m */,
 			);
 			name = "Supporting Files";
@@ -281,6 +296,7 @@
 				C987F8571A13E15C00AD3571 /* ViewController.m in Sources */,
 				C987F8541A13E15C00AD3571 /* AppDelegate.m in Sources */,
 				C987F8511A13E15C00AD3571 /* main.m in Sources */,
+				C906A6EA1A1D87FB00140C78 /* BBRoundView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
