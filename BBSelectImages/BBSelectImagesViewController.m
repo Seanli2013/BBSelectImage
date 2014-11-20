@@ -162,7 +162,7 @@ typedef NS_ENUM(NSInteger, BBConstraintMode) {
     }
     else if (viewTag == BBConstraintModePortrait)
     {
-        self.topPortraitViewConstraint = [[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-20-[pVp]" options:0 metrics:nil views:viewsDictionary] lastObject];
+        self.topPortraitViewConstraint = [[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-60-[pVp]" options:0 metrics:nil views:viewsDictionary] lastObject];
         [self.view addConstraint:self.topPortraitViewConstraint];
         self.bottomLandscapeViewConstraint = [[NSLayoutConstraint constraintsWithVisualFormat:@"V:[lVp]-20-|" options:0 metrics:nil views:viewsDictionary] lastObject];
         [self.view addConstraint:self.bottomLandscapeViewConstraint];
@@ -287,10 +287,17 @@ typedef NS_ENUM(NSInteger, BBConstraintMode) {
     [controller dismissViewControllerAnimated:YES completion:NULL];
     if (self.imagePortrait) {
         self.portraitImageView.image = croppedImage;
+        if (self.delegate && [self.delegate respondsToSelector:@selector(didSelectedImagePortrait:)]) {
+            [self.delegate didSelectedImagePortrait:croppedImage];
+        }
     }
     else
     {
         self.landscapeImageView.image = croppedImage;
+        if (self.delegate && [self.delegate respondsToSelector:@selector(didSelectedImageLandscape:)]) {
+            [self.delegate didSelectedImageLandscape:croppedImage];
+        }
+
     }
     if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
         [self updateEditButtonEnabled];
