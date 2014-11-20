@@ -12,6 +12,7 @@
 @interface BBSelectImagesViewController () <UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIActionSheetDelegate, PECropViewControllerDelegate>
 @property (weak, nonatomic) IBOutlet UIView *portraitView;
 @property (weak, nonatomic) IBOutlet UIView *landscapeView;
+@property (weak, nonatomic) IBOutlet UIImageView *backgroundImageView;
 
 // constraints
 @property (strong, nonatomic) NSLayoutConstraint *topPortraitViewConstraint;
@@ -78,16 +79,7 @@ typedef NS_ENUM(NSInteger, BBConstraintMode) {
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
-    
-    UIInterfaceOrientation orientation = [UIApplication sharedApplication].statusBarOrientation;
-    if(orientation == UIInterfaceOrientationPortrait)
-    {
-        [self setConstraintsForViews:BBConstraintModePortrait];
-    }
-    else
-    {
-        [self setConstraintsForViews:BBConstraintModeLandscape];
-    }
+    [self setImagesWithOrientation];
 }
 
 
@@ -116,9 +108,45 @@ typedef NS_ENUM(NSInteger, BBConstraintMode) {
         [self setConstraintsForViews:BBConstraintModeLandscape];
 
     }
-    [self.view needsUpdateConstraints];
+//    CABasicAnimation *fadeOutAnim = [CABasicAnimation animationWithKeyPath:@"opacity"];
+//    fadeOutAnim.fromValue = [NSNumber numberWithFloat:1.0];
+//    fadeOutAnim.toValue = [NSNumber numberWithFloat:0.0];
+//    fadeOutAnim.duration = duration;
+//    [self.backgroundImageView.layer addAnimation:fadeOutAnim forKey:@"fade-out"];
+//    self.backgroundImageView.layer.opacity = 0.0;
+//
+//    [self.view needsUpdateConstraints];
 }
 
+- (void)didRotateFromInterfaceOrientation:(UIInterfaceOrientation)fromInterfaceOrientation
+{
+    [self setImagesWithOrientation];
+//    CABasicAnimation *fadeInAnim = [CABasicAnimation animationWithKeyPath:@"opacity"];
+//    fadeInAnim.fromValue = [NSNumber numberWithFloat:0.0];
+//    fadeInAnim.toValue = [NSNumber numberWithFloat:1.0];
+//    fadeInAnim.duration = 0.8;
+//    [self.backgroundImageView.layer addAnimation:fadeInAnim forKey:@"fade-in"];
+//    self.backgroundImageView.layer.opacity = 1.0;
+
+}
+
+
+#pragma functions
+- (void)setImagesWithOrientation
+{
+    UIInterfaceOrientation orientation = [UIApplication sharedApplication].statusBarOrientation;
+    if(orientation == UIInterfaceOrientationPortrait)
+    {
+        [self setConstraintsForViews:BBConstraintModePortrait];
+        self.backgroundImageView.image = self.portraitImage;
+    }
+    else
+    {
+        [self setConstraintsForViews:BBConstraintModeLandscape];
+        self.backgroundImageView.image = self.landscapeImage;
+    }
+
+}
 
 - (void)setConstraintsForViews:(NSInteger)viewTag
 {
@@ -174,9 +202,6 @@ typedef NS_ENUM(NSInteger, BBConstraintMode) {
     }
     else{};
 }
-
-
-#pragma functions
 
 - (void)showCamera
 {
