@@ -67,12 +67,14 @@ typedef NS_ENUM(NSInteger, BBConstraintMode) {
 {
     _portraitImage = portraitImage;
     self.portraitImageView.image = portraitImage;
+    [self setImagesWithOrientation];
 }
 
 - (void)setLandscapeImage:(UIImage *)landscapeImage
 {
     _landscapeImage = landscapeImage;
     self.landscapeImageView.image = landscapeImage;
+    [self setImagesWithOrientation];
 }
 
 
@@ -312,6 +314,7 @@ typedef NS_ENUM(NSInteger, BBConstraintMode) {
     [controller dismissViewControllerAnimated:YES completion:NULL];
     if (self.imagePortrait) {
         self.portraitImageView.image = croppedImage;
+        self.portraitImage = croppedImage;
         if (self.delegate && [self.delegate respondsToSelector:@selector(didSelectedImagePortrait:)]) {
             [self.delegate didSelectedImagePortrait:croppedImage];
         }
@@ -319,6 +322,7 @@ typedef NS_ENUM(NSInteger, BBConstraintMode) {
     else
     {
         self.landscapeImageView.image = croppedImage;
+        self.landscapeImage = croppedImage;
         if (self.delegate && [self.delegate respondsToSelector:@selector(didSelectedImageLandscape:)]) {
             [self.delegate didSelectedImageLandscape:croppedImage];
         }
