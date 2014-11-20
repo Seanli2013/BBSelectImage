@@ -1,15 +1,15 @@
 //
-//  ViewController.m
+//  BBSelectImagesViewController.m
 //  BBSelectImages
 //
 //  Created by Xiang LI on 11/12/14.
 //  Copyright (c) 2014 Xiang LI. All rights reserved.
 //
 
-#import "ViewController.h"
+#import "BBSelectImagesViewController.h"
 #import "PECropViewController.h"
 
-@interface ViewController () <UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIActionSheetDelegate, PECropViewControllerDelegate>
+@interface BBSelectImagesViewController () <UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIActionSheetDelegate, PECropViewControllerDelegate>
 @property (weak, nonatomic) IBOutlet UIView *portraitView;
 @property (weak, nonatomic) IBOutlet UIView *landscapeView;
 
@@ -41,7 +41,7 @@ typedef NS_ENUM(NSInteger, BBConstraintMode) {
     BBConstraintModePortrait,
 };
 
-@implementation ViewController
+@implementation BBSelectImagesViewController
 @synthesize portraitImage = _portraitImage;
 @synthesize landscapeImage = _landscapeImage;
 

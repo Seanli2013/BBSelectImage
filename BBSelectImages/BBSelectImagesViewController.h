@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  BBSelectImagesViewController.h
 //  BBSelectImages
 //
 //  Created by Xiang LI on 11/12/14.
@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
+@interface BBSelectImagesViewController : UIViewController
 @property (nonatomic, strong) UIImage *portraitImage;
 @property (nonatomic, strong) UIImage *landscapeImage;
 
