@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3ft-bC-PCS">
+                                <rect key="frame" x="36" y="40" width="200" height="280"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QxP-Kp-oT2">
+                                        <rect key="frame" x="0.0" y="0.0" width="200" height="234"/>
+                                    </imageView>
+                                    <button opaque="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ruA-Ug-x5c">
+                                        <rect key="frame" x="8" y="242" width="46" height="30"/>
+                                        <state key="normal" title="编辑">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="openEditor:" destination="BYZ-38-t0r" eventType="touchUpInside" id="1jk-xc-M0g"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R01-W4-Bpc">
+                                        <rect key="frame" x="50" y="242" width="46" height="30"/>
+                                        <state key="normal" title="重选">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="cameraButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="LtG-5l-ESh"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="纵向" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TPL-YL-L1Z">
+                                        <rect key="frame" x="150" y="246" width="42" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JE2-Tl-Ran">
+                                <rect key="frame" x="284" y="380" width="280" height="200"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qFf-PC-BDW">
+                                        <rect key="frame" x="0.0" y="0.0" width="280" height="154"/>
+                                    </imageView>
+                                    <button opaque="NO" tag="2" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vHj-es-b1J">
+                                        <rect key="frame" x="8" y="162" width="46" height="30"/>
+                                        <state key="normal" title="编辑">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="openEditor:" destination="BYZ-38-t0r" eventType="touchUpInside" id="W97-G5-OfW"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="2" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qAt-qR-7Mo">
+                                        <rect key="frame" x="52" y="162" width="46" height="30"/>
+                                        <state key="normal" title="重选">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="cameraButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="8m9-tj-71k"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="横向" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="itG-kR-TxD">
+                                        <rect key="frame" x="230" y="166" width="42" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="3ft-bC-PCS" secondAttribute="trailing" constant="348" placeholder="YES" id="5uf-B6-hos"/>
+                            <constraint firstItem="3ft-bC-PCS" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="20" placeholder="YES" id="6De-Ev-gnc"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="JE2-Tl-Ran" secondAttribute="bottom" constant="20" placeholder="YES" id="7wG-jy-bW0"/>
+                            <constraint firstItem="JE2-Tl-Ran" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="268" placeholder="YES" id="PKO-wY-WVW"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="JE2-Tl-Ran" secondAttribute="trailing" constant="20" placeholder="YES" id="Pun-12-Nvn"/>
+                            <constraint firstItem="JE2-Tl-Ran" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="360" placeholder="YES" id="Uec-Sx-Eab"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="3ft-bC-PCS" secondAttribute="bottom" constant="280" placeholder="YES" id="Xzf-82-xqh"/>
+                            <constraint firstItem="3ft-bC-PCS" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="20" placeholder="YES" id="kvd-rS-gEn"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="editButton" destination="ruA-Ug-x5c" id="bUu-vG-bud"/>
+                        <outlet property="landscapeImageView" destination="qFf-PC-BDW" id="vpg-cV-aBD"/>
+                        <outlet property="landscapeView" destination="JE2-Tl-Ran" id="7gP-pz-WyF"/>
+                        <outlet property="portraitImageView" destination="QxP-Kp-oT2" id="Rgw-6W-dCv"/>
+                        <outlet property="portraitView" destination="3ft-bC-PCS" id="E4X-zQ-mVL"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="667" y="711"/>
+        </scene>
+    </scenes>
+</document>
