@@ -26,10 +26,5 @@
 
 @property (nonatomic, weak) id <BBSelectImagesDelegate> delegate;
 
-typedef NS_ENUM(NSInteger, BBSelectImagesMode) {
-    BBSelectImagesModeLandscape = 1,
-    BBSelectImagesModePortrait,
-};
-
 @end
 

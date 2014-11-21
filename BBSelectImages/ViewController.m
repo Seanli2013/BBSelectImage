@@ -15,6 +15,10 @@
 @implementation ViewController
 #define kBackgroundImagePortraitUD @"kBackgroundImagePortraitUD"
 #define kBackgroundImageLandscapeUD @"kBackgroundImageLandscapeUD"
+typedef NS_ENUM(NSInteger, BBSelectImagesMode) {
+    BBSelectImagesModeLandscape = 1,
+    BBSelectImagesModePortrait,
+};
 
 - (void)viewDidLoad {
     [super viewDidLoad];
