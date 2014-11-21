@@ -306,6 +306,14 @@ typedef NS_ENUM(NSInteger, BBConstraintMode) {
     }
 }
 
+- (IBAction)dismissAction:(UIButton *)sender {
+    if (self.delegate && [self.delegate respondsToSelector:@selector(willDismiss)]) {
+        [self.delegate willDismiss];
+    }
+    [self dismissViewControllerAnimated:YES completion:^{
+        //
+    }];
+}
 
 #pragma mark - PECropViewControllerDelegate methods
 

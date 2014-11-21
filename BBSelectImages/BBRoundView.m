@@ -30,7 +30,7 @@
     }
     else
     {
-        self.layer.borderColor = [UIColor whiteColor].CGColor;
+        self.layer.borderColor = [UIColor lightGrayColor].CGColor;
     }
     
     float borderWidth = [self.borderWidth floatValue];
