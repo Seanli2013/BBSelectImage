@@ -30,7 +30,7 @@
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QxP-Kp-oT2">
                                         <rect key="frame" x="0.0" y="0.0" width="200" height="234"/>
                                     </imageView>
-                                    <button opaque="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ruA-Ug-x5c" customClass="BBRoundButton">
+                                    <button opaque="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ruA-Ug-x5c" customClass="BBRoundButton">
                                         <rect key="frame" x="8" y="242" width="46" height="30"/>
                                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                         <state key="normal" title="编辑">
@@ -41,7 +41,7 @@
                                             <action selector="openEditor:" destination="BYZ-38-t0r" eventType="touchUpInside" id="1jk-xc-M0g"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R01-W4-Bpc" customClass="BBRoundButton">
+                                    <button opaque="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R01-W4-Bpc" customClass="BBRoundButton">
                                         <rect key="frame" x="60" y="242" width="46" height="30"/>
                                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                         <state key="normal" title="选择">
@@ -67,7 +67,7 @@
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qFf-PC-BDW">
                                         <rect key="frame" x="0.0" y="0.0" width="280" height="154"/>
                                     </imageView>
-                                    <button opaque="NO" tag="2" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vHj-es-b1J" customClass="BBRoundButton">
+                                    <button opaque="NO" tag="2" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vHj-es-b1J" customClass="BBRoundButton">
                                         <rect key="frame" x="8" y="162" width="46" height="30"/>
                                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                         <state key="normal" title="编辑">
@@ -78,7 +78,7 @@
                                             <action selector="openEditor:" destination="BYZ-38-t0r" eventType="touchUpInside" id="W97-G5-OfW"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" tag="2" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qAt-qR-7Mo" customClass="BBRoundButton">
+                                    <button opaque="NO" tag="2" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qAt-qR-7Mo" customClass="BBRoundButton">
                                         <rect key="frame" x="62" y="162" width="46" height="30"/>
                                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                         <state key="normal" title="选择">
@@ -98,19 +98,34 @@
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xnD-0B-clt" customClass="BBRoundButton">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xnD-0B-clt" customClass="BBRoundButton">
                                 <rect key="frame" x="538" y="28" width="46" height="30"/>
                                 <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="46" id="eFn-Xx-DzV"/>
                                     <constraint firstAttribute="height" constant="30" id="jju-eE-pj3"/>
                                 </constraints>
-                                <state key="normal" title="关闭">
+                                <state key="normal" title="保存">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="dismissAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ekm-gd-wLZ"/>
+                                    <action selector="saveAndDismissActin:" destination="BYZ-38-t0r" eventType="touchUpInside" id="dcZ-1j-4BW"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HhC-w7-Dlv" customClass="BBRoundButton">
+                                <rect key="frame" x="484" y="28" width="46" height="30"/>
+                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="46" id="hLN-Eu-wJc"/>
+                                    <constraint firstAttribute="height" constant="30" id="nQL-qY-spy"/>
+                                </constraints>
+                                <state key="normal" title="取消">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="notSaveButDismiss:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ckF-6x-j11"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -129,7 +144,9 @@
                             <constraint firstItem="xnD-0B-clt" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="XBU-bJ-Uch"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="3ft-bC-PCS" secondAttribute="bottom" constant="280" placeholder="YES" id="Xzf-82-xqh"/>
                             <constraint firstAttribute="trailingMargin" secondItem="NOH-Ng-yWC" secondAttribute="trailing" constant="-16" id="at0-Ud-W33"/>
+                            <constraint firstItem="xnD-0B-clt" firstAttribute="leading" secondItem="HhC-w7-Dlv" secondAttribute="trailing" constant="8" id="cct-Yg-kd7"/>
                             <constraint firstItem="OBG-4c-oyj" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="dbF-sm-JyH"/>
+                            <constraint firstItem="HhC-w7-Dlv" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="fIu-rw-Abh"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="NOH-Ng-yWC" secondAttribute="bottom" id="fyb-WW-VmZ"/>
                             <constraint firstItem="NOH-Ng-yWC" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-16" id="hxo-F5-zfV"/>
                             <constraint firstItem="3ft-bC-PCS" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="20" placeholder="YES" id="kvd-rS-gEn"/>
@@ -152,7 +169,7 @@
         <!--View Controller-->
         <scene sceneID="ufy-7S-oLS">
             <objects>
-                <viewController id="0n7-j8-SDW" sceneMemberID="viewController">
+                <viewController id="0n7-j8-SDW" customClass="ViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="aG4-j7-KOu"/>
                         <viewControllerLayoutGuide type="bottom" id="mxd-Z1-WnY"/>
@@ -173,7 +190,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="BYZ-38-t0r" kind="presentation" modalPresentationStyle="fullScreen" modalTransitionStyle="coverVertical" id="Q9m-Xk-pVT"/>
+                                    <segue destination="BYZ-38-t0r" kind="presentation" identifier="segueToBBSelectImagesVC" modalPresentationStyle="fullScreen" modalTransitionStyle="coverVertical" id="Q9m-Xk-pVT"/>
                                 </connections>
                             </button>
                         </subviews>

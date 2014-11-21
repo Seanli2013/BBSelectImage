@@ -21,6 +21,7 @@
 		C987F85C1A13E15C00AD3571 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C987F85B1A13E15C00AD3571 /* Images.xcassets */; };
 		C987F85F1A13E15C00AD3571 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = C987F85D1A13E15C00AD3571 /* LaunchScreen.xib */; };
 		C987F86B1A13E15C00AD3571 /* BBSelectImagesTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C987F86A1A13E15C00AD3571 /* BBSelectImagesTests.m */; };
+		C99B88D91A1EC7160086EF7F /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C99B88D81A1EC7160086EF7F /* ViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +62,8 @@
 		C987F8641A13E15C00AD3571 /* BBSelectImagesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BBSelectImagesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C987F8691A13E15C00AD3571 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C987F86A1A13E15C00AD3571 /* BBSelectImagesTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BBSelectImagesTests.m; sourceTree = "<group>"; };
+		C99B88D71A1EC7160086EF7F /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		C99B88D81A1EC7160086EF7F /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,6 +133,8 @@
 				C987F8551A13E15C00AD3571 /* BBSelectImagesViewController.h */,
 				C987F8561A13E15C00AD3571 /* BBSelectImagesViewController.m */,
 				C987F8581A13E15C00AD3571 /* Main.storyboard */,
+				C99B88D71A1EC7160086EF7F /* ViewController.h */,
+				C99B88D81A1EC7160086EF7F /* ViewController.m */,
 				C987F85B1A13E15C00AD3571 /* Images.xcassets */,
 				C987F85D1A13E15C00AD3571 /* LaunchScreen.xib */,
 				C987F84E1A13E15C00AD3571 /* Supporting Files */,
@@ -310,6 +315,7 @@
 			files = (
 				C987F8571A13E15C00AD3571 /* BBSelectImagesViewController.m in Sources */,
 				C906A6F31A1DBAA100140C78 /* BBRoundButton.m in Sources */,
+				C99B88D91A1EC7160086EF7F /* ViewController.m in Sources */,
 				C906A6F61A1DBC3300140C78 /* UIERealTimeBlurView.m in Sources */,
 				C987F8541A13E15C00AD3571 /* AppDelegate.m in Sources */,
 				C987F8511A13E15C00AD3571 /* main.m in Sources */,

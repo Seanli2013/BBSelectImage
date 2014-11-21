@@ -7,6 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+@class BBSelectImagesViewController;
+
 @protocol BBSelectImagesDelegate <NSObject>
 
 @optional
@@ -15,12 +17,19 @@
 // 选定LandscapeImage
 - (void)didSelectedImageLandscape:(UIImage *)landscapeImage;
 // 要退出前
-- (void)willDismiss;
+- (void)willDismiss:(BBSelectImagesViewController *)selectImagesVC saveFlag:(BOOL)saveFlag;
 @end
 
 @interface BBSelectImagesViewController : UIViewController
-@property (nonatomic, strong) UIImage *portraitImage;
-@property (nonatomic, strong) UIImage *landscapeImage;
+@property (nonatomic, strong) UIImage *originalPortraitImage;
+@property (nonatomic, strong) UIImage *originalLandscapeImage;
+
 @property (nonatomic, weak) id <BBSelectImagesDelegate> delegate;
+
+typedef NS_ENUM(NSInteger, BBSelectImagesMode) {
+    BBSelectImagesModeLandscape = 1,
+    BBSelectImagesModePortrait,
+};
+
 @end
 

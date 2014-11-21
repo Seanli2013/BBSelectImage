@@ -34,6 +34,10 @@
 @property (weak, nonatomic) IBOutlet UIImageView *landscapeImageView;
 @property (weak, nonatomic) IBOutlet UIButton *editButton;
 
+
+@property (nonatomic, strong) UIImage *portraitImage;
+@property (nonatomic, strong) UIImage *landscapeImage;
+
 @property (assign) BOOL imagePortrait; // YES:表示正在操作portrait，NO表示正在操作landscape
 @end
 
@@ -42,6 +46,7 @@ typedef NS_ENUM(NSInteger, BBConstraintMode) {
     BBConstraintModePortrait,
 };
 
+
 @implementation BBSelectImagesViewController
 @synthesize portraitImage = _portraitImage;
 @synthesize landscapeImage = _landscapeImage;
@@ -49,7 +54,7 @@ typedef NS_ENUM(NSInteger, BBConstraintMode) {
 - (UIImage *)portraitImage
 {
     if (!_portraitImage) {
-        _portraitImage = self.portraitImageView.image;
+        _portraitImage = [self.originalPortraitImage copy];
     }
     return _portraitImage;
 }
@@ -58,7 +63,7 @@ typedef NS_ENUM(NSInteger, BBConstraintMode) {
 {
     if (!_landscapeImage)
     {
-        _landscapeImage = self.landscapeImageView.image;
+        _landscapeImage = [self.originalLandscapeImage copy];
     }
     return _landscapeImage;
 }
@@ -67,14 +72,12 @@ typedef NS_ENUM(NSInteger, BBConstraintMode) {
 {
     _portraitImage = portraitImage;
     self.portraitImageView.image = portraitImage;
-    [self setImagesWithOrientation];
 }
 
 - (void)setLandscapeImage:(UIImage *)landscapeImage
 {
     _landscapeImage = landscapeImage;
     self.landscapeImageView.image = landscapeImage;
-    [self setImagesWithOrientation];
 }
 
 
@@ -82,6 +85,8 @@ typedef NS_ENUM(NSInteger, BBConstraintMode) {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     [self setImagesWithOrientation];
+    self.portraitImageView.image = self.portraitImage;
+    self.landscapeImageView.image = self.landscapeImage;
 }
 
 
@@ -110,26 +115,11 @@ typedef NS_ENUM(NSInteger, BBConstraintMode) {
         [self setConstraintsForViews:BBConstraintModeLandscape];
 
     }
-//    CABasicAnimation *fadeOutAnim = [CABasicAnimation animationWithKeyPath:@"opacity"];
-//    fadeOutAnim.fromValue = [NSNumber numberWithFloat:1.0];
-//    fadeOutAnim.toValue = [NSNumber numberWithFloat:0.0];
-//    fadeOutAnim.duration = duration;
-//    [self.backgroundImageView.layer addAnimation:fadeOutAnim forKey:@"fade-out"];
-//    self.backgroundImageView.layer.opacity = 0.0;
-//
-//    [self.view needsUpdateConstraints];
 }
 
 - (void)didRotateFromInterfaceOrientation:(UIInterfaceOrientation)fromInterfaceOrientation
 {
     [self setImagesWithOrientation];
-//    CABasicAnimation *fadeInAnim = [CABasicAnimation animationWithKeyPath:@"opacity"];
-//    fadeInAnim.fromValue = [NSNumber numberWithFloat:0.0];
-//    fadeInAnim.toValue = [NSNumber numberWithFloat:1.0];
-//    fadeInAnim.duration = 0.8;
-//    [self.backgroundImageView.layer addAnimation:fadeInAnim forKey:@"fade-in"];
-//    self.backgroundImageView.layer.opacity = 1.0;
-
 }
 
 
@@ -192,9 +182,9 @@ typedef NS_ENUM(NSInteger, BBConstraintMode) {
     }
     else if (viewTag == BBConstraintModePortrait)
     {
-        self.topPortraitViewConstraint = [[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-60-[pVp]" options:0 metrics:nil views:viewsDictionary] lastObject];
+        self.topPortraitViewConstraint = [[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-68-[pVp]" options:0 metrics:nil views:viewsDictionary] lastObject];
         [self.view addConstraint:self.topPortraitViewConstraint];
-        self.bottomLandscapeViewConstraint = [[NSLayoutConstraint constraintsWithVisualFormat:@"V:[lVp]-20-|" options:0 metrics:nil views:viewsDictionary] lastObject];
+        self.bottomLandscapeViewConstraint = [[NSLayoutConstraint constraintsWithVisualFormat:@"V:[lVp]-12-|" options:0 metrics:nil views:viewsDictionary] lastObject];
         [self.view addConstraint:self.bottomLandscapeViewConstraint];
         self.centerXPortraitView = [NSLayoutConstraint constraintWithItem:self.portraitView attribute:NSLayoutAttributeCenterX relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeCenterX multiplier:1.0 constant:0];
         [self.view addConstraint:self.centerXPortraitView];
@@ -238,24 +228,24 @@ typedef NS_ENUM(NSInteger, BBConstraintMode) {
         if (sender.tag == 1)
         {
             self.imagePortrait = YES;
-            controller.image = self.portraitImageView.image;
+            controller.image = self.portraitImage;
             
         }
         else
         {
             self.imagePortrait = NO;
-            controller.image = self.landscapeImageView.image;
+            controller.image = self.landscapeImage;
             
         }
     }
     else
     {
         if (self.imagePortrait) {
-            controller.image = self.portraitImageView.image;
+            controller.image = self.portraitImage;
         }
         else
         {
-            controller.image = self.landscapeImageView.image;
+            controller.image = self.landscapeImage;
         }
     }
     
@@ -306,10 +296,26 @@ typedef NS_ENUM(NSInteger, BBConstraintMode) {
     }
 }
 
-- (IBAction)dismissAction:(UIButton *)sender {
-    if (self.delegate && [self.delegate respondsToSelector:@selector(willDismiss)]) {
-        [self.delegate willDismiss];
+- (IBAction)saveAndDismissActin:(UIButton *)sender {
+    self.originalPortraitImage = self.portraitImage;
+    self.originalLandscapeImage = self.landscapeImage;
+
+    if (self.delegate && [self.delegate respondsToSelector:@selector(willDismiss:saveFlag:)]) {
+        [self.delegate willDismiss:self saveFlag:YES];
     }
+    
+    
+    [self dismissViewControllerAnimated:YES completion:^{
+        //
+    }];
+}
+
+- (IBAction)notSaveButDismiss:(UIButton *)sender
+{
+    if (self.delegate && [self.delegate respondsToSelector:@selector(willDismiss:saveFlag:)]) {
+        [self.delegate willDismiss:self saveFlag:NO];
+    }
+    
     [self dismissViewControllerAnimated:YES completion:^{
         //
     }];
@@ -321,16 +327,18 @@ typedef NS_ENUM(NSInteger, BBConstraintMode) {
 {
     [controller dismissViewControllerAnimated:YES completion:NULL];
     if (self.imagePortrait) {
-        self.portraitImageView.image = croppedImage;
         self.portraitImage = croppedImage;
+        [self setImagesWithOrientation];
+
         if (self.delegate && [self.delegate respondsToSelector:@selector(didSelectedImagePortrait:)]) {
             [self.delegate didSelectedImagePortrait:croppedImage];
         }
     }
     else
     {
-        self.landscapeImageView.image = croppedImage;
         self.landscapeImage = croppedImage;
+        [self setImagesWithOrientation];
+
         if (self.delegate && [self.delegate respondsToSelector:@selector(didSelectedImageLandscape:)]) {
             [self.delegate didSelectedImageLandscape:croppedImage];
         }
@@ -346,7 +354,7 @@ typedef NS_ENUM(NSInteger, BBConstraintMode) {
     if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
         [self updateEditButtonEnabled];
     }
-    
+    [self setImagesWithOrientation];
     [controller dismissViewControllerAnimated:YES completion:NULL];
 }
 
@@ -374,11 +382,11 @@ typedef NS_ENUM(NSInteger, BBConstraintMode) {
 {
     UIImage *image = info[UIImagePickerControllerOriginalImage];
     if (self.imagePortrait) {
-        self.portraitImageView.image = image;
+        self.portraitImage = image;
     }
     else
     {
-        self.landscapeImageView.image = image;
+        self.landscapeImage = image;
     }
 
     [picker dismissViewControllerAnimated:YES completion:^{
